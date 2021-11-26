@@ -699,7 +699,7 @@ select {
 .discount {
   width: 100vw;
   height: 100vh;
-  background: url(/banner/steve-johnson-TnjzgonRFPU-unsplash.jpg);
+  background: url(/images/banner/steve-johnson-TnjzgonRFPU-unsplash.jpg);
   background-size: cover;
   background-position: center;
   padding: 0 50px;
@@ -760,7 +760,7 @@ select {
 
 /* Style for subscribe */
 #subscribe {
-  background: url(/banner/internet-3116062_1920.jpg);
+  background: url(/images/banner/internet-3116062_1920.jpg);
   position: relative;
 }
 
