@@ -32,23 +32,16 @@
     padding: 10px;
   }
 
+  .products {
+    grid-template-columns: 1fr;
+  }
+
   .products-text p {
     font-size: 1.5rem;
   }
 
   .products-text h1 {
     font-size: 2.5em;
-  }
-
-  .categories {
-    padding: 10px;
-    margin: 30px auto;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  }
-
-  .categories .category {
-    font-size: 1rem;
-    padding: 1em;
   }
 
   .detail-product {

@@ -64,10 +64,33 @@ nav .icons ul {
 nav .icons ul li {
   padding: 0 0.5em;
   list-style: none;
+  cursor: pointer;
 }
 
 nav .icons ul li a {
   text-decoration: none;
+}
+
+nav .icons ul li a:nth-child(2) {
+  position: relative;
+}
+
+nav .icons ul li a > span {
+  position: absolute;
+  font-size: 12px;
+  width: 20px;
+  height: 20px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  margin-left: -10px;
+  margin-top: -10px;
+}
+
+nav .icons ul li a > span > p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 /* End nav style */
 
@@ -75,7 +98,7 @@ nav .icons ul li a {
 .header {
   width: 100vw;
   height: 100vh;
-  background: url(/banner/furniture-3935398_1920.jpg);
+  background: url(/images/banner/furniture-3935398_1920.jpg);
   background-attachment: fixed;
   background-size: cover;
   display: grid;
@@ -142,33 +165,6 @@ nav .icons ul li a {
 }
 /* End features style */
 
-/* Style for categories */
-.categories {
-  width: 100vw;
-  padding: 10px 50px;
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 10px;
-}
-
-.categories .category {
-  font-size: 20px;
-  padding: 1em 1.5em;
-  background: none;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  font-weight: 900;
-  text-transform: uppercase;
-  transition: 0.5s ease-in;
-}
-
-.categories .category:hover {
-  box-shadow: 0 0 10px rgb(219, 219, 219);
-}
-/* End categories style */
-
 /* Style for products-text */
 #products-text {
   color: var(--textColor);
@@ -194,32 +190,64 @@ nav .icons ul li a {
   width: 100vw;
   padding: 10px 50px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: 1fr 3fr;
   justify-content: center;
   gap: 20;
+  color: var(--textColor);
 }
 
-.products a {
+.products .product-categories {
+  position: sticky;
+  top: 0;
+  padding: 2em;
+}
+
+.products .product-categories .product-search {
+  display: flex;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+}
+
+.products .product-categories .product-search input {
+  width: 100%;
+  outline: none;
+  border: none;
+  font-size: 18px;
+}
+
+.products .product-categories .product-search button {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+
+.products .product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.products .product-list a {
   text-decoration: none;
   color: var(--textColor);
 }
 
-.products .product {
+.products .product-list .product {
   text-align: center;
   position: relative;
 }
 
-.products .product .product-image {
+.products .product-list .product .product-image {
   position: relative;
   padding: 20px;
 }
 
-.products .product .product-image img {
+.products .product-list .product .product-image img {
   object-fit: cover;
   width: 100%;
 }
 
-.products .product .product-image button {
+.products .product-list .product .product-image button {
   position: absolute;
   right: 0;
   border: none;
@@ -228,7 +256,7 @@ nav .icons ul li a {
   color: white;
 }
 
-.products .product .product-text {
+.products .product-list .product .product-text {
   padding: 20px;
 }
 /* End products style */
@@ -885,3 +913,172 @@ select {
   color: rgb(15, 17, 179);
 }
 /* End footer style */
+
+/* Style for searchModal */
+.searchModal {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background-color: rgb(0, 0, 0, 0.5);
+  z-index: 100;
+  display: none;
+  animation: search 0.5s ease-in;
+  display: none;
+  place-content: center;
+}
+
+.searchModal .search {
+  background: white;
+  width: 60vw;
+  height: 30vh;
+  padding: 2em;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgb(20, 20, 20);
+  display: grid;
+  place-content: center;
+  animation: search 0.5s ease-in;
+}
+
+@keyframes search {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.searchModal .search .input {
+  display: flex;
+  padding: 1em;
+  background: rgb(243, 243, 243);
+  border-radius: 50px;
+}
+
+.searchModal .search .input input {
+  padding: 0.5em 1em;
+  font-size: 1.2rem;
+  width: 50vw;
+  outline: none;
+  border: none;
+  border-radius: 50px;
+  margin-right: 10px;
+}
+
+.searchModal .search .input button {
+  padding: 0.5em 1em;
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  color: white;
+  background: rgb(241, 183, 56);
+  cursor: pointer;
+}
+/* End searchModal style */
+
+/* Style for login */
+.login {
+  width: 100vw;
+  min-height: 130vh;
+  padding: 50px;
+  display: grid;
+  place-content: center;
+}
+
+.login .login-form {
+  width: 500px;
+  color: var(--textColor);
+}
+
+.login .login-form .login-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.login .login-form .login-content h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.login .login-form .login-content .input {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.login .login-form .login-content .input input {
+  padding: 0.5em;
+  outline: none;
+  margin-top: 5px;
+  height: 40px;
+  font-size: 18px;
+}
+
+.login .login-form .login-content .input label {
+  font-size: 1.3rem;
+}
+
+.login .login-form .login-content .login-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.login .login-form .login-content .login-action button {
+  padding: 1em;
+  width: 50%;
+  font-size: 18px;
+  background: rgb(112, 112, 255);
+  border: none;
+  outline: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.login .login-form .login-content .login-action p {
+  font-size: 1rem;
+}
+
+.login .login-form .login-content .login-action p > a {
+  text-decoration: none;
+}
+
+.login .login-form .login-content p {
+  margin: 10px 0;
+}
+
+.login .login-form .login-content .button-login {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+
+.login .login-form .login-content .button-login button {
+  width: 90%;
+  padding: 1em;
+  border: none;
+  outline: none;
+  color: white;
+  border-radius: 50px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.login .login-form .login-content .button-login button:nth-child(1) {
+  background: rgb(0, 22, 221);
+}
+
+.login .login-form .login-content .button-login button:nth-child(2) {
+  background: rgb(221, 0, 0);
+}
+/* End login style */

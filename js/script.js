@@ -1,10 +1,10 @@
-const nav = document.querySelector('nav');
+// const nav = document.querySelector('nav');
 
-window.addEventListener('scroll', function() {
-    setTimeout(() => {
-        nav.classList.toggle('sticky', scrollY > 500);
-    }, 500);
-});
+// window.addEventListener('scroll', function() {
+//     setTimeout(() => {
+//         nav.classList.toggle('sticky', scrollY > 500);
+//     }, 500);
+// });
 
 const cart      = document.querySelectorAll('.cart-card');
 const harga     = document.querySelectorAll('.cart-card .cart-card-total input');
@@ -40,4 +40,26 @@ images.addEventListener('click', function(e) {
         }, 500);
         jumbo.classList.add('fade');
     }
+});
+
+const search = document.getElementById('search');
+const searchModal = document.querySelector('.searchModal');
+const searchButton = document.querySelector('.searchModal .search .input button');
+
+search.addEventListener('click', function() {
+    searchModal.style.display = "grid";
+    searchButton.addEventListener('click', function() {
+        searchModal.style.display = "none";
+    });
+});
+
+
+
+const count = document.querySelector('#count p');
+const cartBtn = document.querySelector('#cart-btn');
+
+let total = 0;
+cartBtn.addEventListener('click', function() {
+    total++;
+    count.innerHTML = total;
 });
