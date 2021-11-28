@@ -240,11 +240,17 @@ nav .icons ul li a > span > p {
 .products .product-list .product .product-image {
   position: relative;
   padding: 20px;
+  display: flex;
 }
 
 .products .product-list .product .product-image img {
   object-fit: cover;
   width: 100%;
+  transition: 0.5s ease-in;
+}
+
+.products .product-list .product .product-image img:hover {
+  transform: scale(1.05);
 }
 
 .products .product-list .product .product-image button {
@@ -449,7 +455,8 @@ nav .icons ul li a > span > p {
   font-size: 16px;
   width: 80px;
   outline: none;
-  padding: 0.3rem;
+  border: none;
+  border-bottom: 1px solid black;
 }
 
 .cart .cart-items .cart-card .cart-card-total h3 {
@@ -783,6 +790,12 @@ select {
 
 .sponsor .sponsor-list .card {
   display: flex;
+}
+
+.sponsor .sponsor-list .card img {
+  display: flex;
+  width: 100%;
+  height: 100%;
 }
 /* End sponsor style */
 

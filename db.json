@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "judul": "Jam Putih",
+        "harga": 50000,
+        "gambar": "/images/products/artem-riasnianskyi-8fvDJw3jrcI-unsplash.jpg",
+        "jenis": "Baru"
+    },
+    {
+        "id": 2,
+        "judul": "Kasur Coklat Empuk",
+        "harga": 2500000,
+        "gambar": "/images/products/febrian-zakaria-2QTsCoQnoag-unsplash.jpg",
+        "jenis": "baru"
+    },
+    {
+        "id": 3,
+        "judul": "Alarm Klasik",
+        "harga": 100000,
+        "gambar": "/images/products/benjamin-voros-X63FTIZFbZo-unsplash.jpg",
+        "jenis": "baru"
+    }
+]

@@ -1,3 +1,27 @@
+const search = document.querySelector('.product-search input');
+
+fetch('/db.json')
+.then(response => response.json())
+.then(data => {
+        let card = '';
+        const productLinks = document.querySelector('.product-list');
+        data.forEach(product => {
+            card += `<a href="detail-produk.html">
+                        <div class="product" data-attr="${ product.jenis }">
+                            <div class="product-image">
+                                <img src="${ product.gambar }" alt="">
+                                <button>${ product.jenis }</button>
+                            </div>
+                            <div class="product-text">
+                                <h1>${ product.judul }</h1>
+                                <h4>Rp. ${ product.harga.toLocaleString('ID', 3) }</h4>
+                            </div>
+                        </div>
+                    </a>`;
+                });
+            productLinks.innerHTML = card;
+    });
+
 // const nav = document.querySelector('nav');
 
 // window.addEventListener('scroll', function() {
@@ -42,17 +66,6 @@ images.addEventListener('click', function(e) {
     }
 });
 
-const search = document.getElementById('search');
-const searchModal = document.querySelector('.searchModal');
-const searchButton = document.querySelector('.searchModal .search .input button');
-
-search.addEventListener('click', function() {
-    searchModal.style.display = "grid";
-    searchButton.addEventListener('click', function() {
-        searchModal.style.display = "none";
-    });
-});
-
 
 
 const count = document.querySelector('#count p');
@@ -63,3 +76,5 @@ cartBtn.addEventListener('click', function() {
     total++;
     count.innerHTML = total;
 });
+
+
