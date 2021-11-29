@@ -342,11 +342,30 @@ nav .icons ul li a > span > p {
 }
 
 .detail-product .show-product .product-catalog .product-price {
-  margin-bottom: 0;
+  margin-bottom: 20px;
 }
 
-.detail-product .show-product .product-catalog .product-price h3 {
-  font-size: 2rem;
+.detail-product .show-product .product-catalog .product-price .list-price {
+  display: flex;
+}
+
+.detail-product .show-product .product-catalog .product-price .list-price h3 {
+  margin-right: 30px;
+  position: relative;
+}
+
+.detail-product
+  .show-product
+  .product-catalog
+  .product-price
+  .list-price
+  h3::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background: #000;
 }
 
 .detail-product .show-product .product-catalog .product-quantity {
@@ -785,11 +804,19 @@ select {
 .sponsor .sponsor-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding: 20px;
   gap: 10px;
+  justify-content: center;
 }
 
 .sponsor .sponsor-list .card {
   display: flex;
+  transition: 0.5s ease-in;
+  cursor: pointer;
+}
+
+.sponsor .sponsor-list .card:hover {
+  box-shadow: 0 0 10px rgb(199, 199, 199);
 }
 
 .sponsor .sponsor-list .card img {
@@ -871,6 +898,62 @@ select {
   background: rgb(255, 206, 100);
 }
 /* End subscribe style */
+
+/* Style for contact */
+.contact {
+  width: 100vw;
+  padding: 50px;
+  color: var(--textColor);
+}
+
+.contact h1 {
+  font-size: 5em;
+}
+
+.contact h3 {
+  font-size: 2em;
+}
+
+.contact h1,
+h3 {
+  text-align: center;
+}
+
+.contact .list-contact {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 10px;
+  margin-top: 30px;
+  padding: 20px;
+}
+
+.contact .list-contact .card {
+  background: var(--secondaryColor);
+  padding: 30px;
+  align-items: center;
+  transition: 0.5s ease-in;
+  text-align: center;
+}
+
+.contact .list-contact .card:hover {
+  box-shadow: 0 0 10px rgb(190, 190, 190);
+  cursor: pointer;
+}
+
+.contact .list-contact .card svg {
+  width: 50px;
+  height: 50px;
+}
+
+.contact .list-contact .card h3 {
+  font-size: 1.5rem;
+}
+
+.contact .contact-map {
+  display: flex;
+  padding: 20px;
+}
+/* End contact style */
 
 /* Style for footer */
 #footer {

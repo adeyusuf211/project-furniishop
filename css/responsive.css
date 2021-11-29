@@ -154,6 +154,45 @@
     width: 50vw;
   }
 
+  .sponsor {
+    padding: 20px;
+  }
+
+  .sponsor .sponsor-list {
+    grid-template-columns: repeat(3, 100px);
+    justify-content: center;
+  }
+
+  .contact {
+    padding: 20px;
+  }
+
+  .contact h1 {
+    font-size: 3em;
+  }
+
+  .contact h3 {
+    font-size: 1em;
+  }
+
+  .contact .list-contact {
+    padding: 10px;
+    grid-template-columns: 1fr;
+  }
+
+  .contact .list-contact .card h3 {
+    font-size: 1.2rem;
+  }
+
+  .contact .list-contact .card svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .contact .contact-map {
+    padding: 10px;
+  }
+
   #footer {
     margin-bottom: 100px;
   }
