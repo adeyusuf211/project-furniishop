@@ -57,6 +57,10 @@ nav .items ul li a {
   text-decoration: none;
 }
 
+nav .icons {
+  position: relative;
+}
+
 nav .icons ul {
   display: flex;
 }
