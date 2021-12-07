@@ -34,6 +34,7 @@
 
   .products {
     grid-template-columns: 1fr;
+    padding: 10px;
   }
 
   .products-text p {
@@ -220,5 +221,62 @@
 
   .footer-copy p {
     font-size: 1.2rem;
+  }
+
+  .modal .modal-box {
+    width: 90vw;
+  }
+
+  .modal .modal-box .modal-body {
+    flex-direction: column;
+  }
+
+  .modal .modal-box .modal-body .modal-image {
+    height: 30vh;
+  }
+
+  .modal .modal-box .modal-body .modal-content .modal-variant .variant-list {
+    justify-content: space-between;
+  }
+
+  .modal
+    .modal-box
+    .modal-body
+    .modal-content
+    .modal-variant
+    .variant-list
+    .card-image {
+    height: 80px;
+  }
+
+  .modal
+    .modal-box
+    .modal-body
+    .modal-content
+    .modal-variant
+    .variant-list
+    .card-image
+    img {
+    object-fit: cover;
+  }
+
+  .modal .modal-box .modal-body .modal-content .modal-variant h3 {
+    font-size: 1rem;
+  }
+
+  .modal .modal-box .modal-body .modal-content .modal-input input {
+    font-size: 1rem;
+  }
+
+  .modal .modal-box .modal-body .modal-content .modal-input label {
+    font-size: 1rem;
+  }
+
+  .modal .modal-box .modal-body .modal-content .modal-price h5 {
+    font-size: 1rem;
+  }
+
+  .modal .modal-box .modal-body .modal-content .modal-price h3 {
+    font-size: 1.3rem;
   }
 }

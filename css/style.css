@@ -66,7 +66,7 @@ nav .icons ul {
 }
 
 nav .icons ul li {
-  padding: 0 0.5em;
+  padding: 0 1em;
   list-style: none;
   cursor: pointer;
 }
@@ -81,20 +81,10 @@ nav .icons ul li a:nth-child(2) {
 
 nav .icons ul li a > span {
   position: absolute;
-  font-size: 12px;
-  width: 20px;
-  height: 20px;
-  background: red;
-  color: white;
-  border-radius: 50%;
-  margin-left: -10px;
-  margin-top: -10px;
 }
 
 nav .icons ul li a > span > p {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: auto;
 }
 /* End nav style */
 
@@ -374,17 +364,11 @@ nav .icons ul li a > span > p {
 
 .detail-product .show-product .product-catalog .product-quantity {
   display: flex;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .detail-product .show-product .product-catalog .product-quantity h3 {
   margin-right: 20px;
-}
-
-.detail-product .show-product .product-catalog .product-quantity input {
-  width: 50px;
-  font-size: 1.3rem;
-  outline: none;
 }
 
 .detail-product .show-product .product-catalog .product-action {
@@ -493,13 +477,15 @@ nav .icons ul li a > span > p {
 .cart .cart-items .cart-card a {
   border: none;
   outline: none;
-  background: #000;
+  background: rgb(202, 21, 21);
   display: flex;
+  padding: 5px;
+  cursor: pointer;
 }
 
 .cart .cart-items .cart-card a > svg {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
 }
 
 .cart .cart-actions {
@@ -1186,3 +1172,134 @@ h3 {
   background: rgb(221, 0, 0);
 }
 /* End login style */
+
+/* Style for modal */
+.modal {
+  width: 100vw;
+  min-height: 100vh;
+  background: rgb(82, 82, 82, 0.3);
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  display: none;
+  place-content: center;
+  animation: modal 0.5s ease-in forwards;
+}
+
+@keyframes modal {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+.modal .modal-box {
+  width: 70vw;
+  padding: 1em;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgb(163, 163, 163);
+  color: var(--textColor);
+}
+
+.modal .modal-box .modal-body {
+  display: flex;
+  padding: 1em 0;
+  gap: 20px;
+}
+
+.modal .modal-box .modal-body .modal-image {
+  display: flex;
+  height: 80vh;
+}
+
+.modal .modal-box .modal-body .modal-image img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.modal .modal-box .modal-body .modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal .modal-box .modal-body .modal-content .modal-variant {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.modal .modal-box .modal-body .modal-content .modal-variant h3 {
+  font-size: 1.3rem;
+  text-align: start;
+  margin-bottom: 10px;
+}
+
+.modal .modal-box .modal-body .modal-content .modal-variant .variant-list {
+  display: flex;
+}
+
+.modal
+  .modal-box
+  .modal-body
+  .modal-content
+  .modal-variant
+  .variant-list
+  .card-image {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  cursor: pointer;
+}
+
+.modal .modal-box .modal-body .modal-content .modal-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal .modal-box .modal-body .modal-content .modal-input label {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.modal .modal-box .modal-body .modal-content .modal-input input {
+  padding: 0.5em;
+  font-size: 1.2rem;
+  outline: none;
+}
+
+.modal .modal-box .modal-body .modal-content .modal-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 20px 0;
+}
+
+.modal .modal-box .modal-body .modal-content .modal-price h5 {
+  font-size: 1.3rem;
+}
+
+.modal .modal-box .modal-body .modal-content .modal-price h3 {
+  font-size: 1.5rem;
+}
+
+.modal .modal-box .modal-body .modal-content .modal-button button {
+  padding: 0.5em 1em;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.modal .modal-box .modal-body .modal-content .modal-button button:nth-child(1) {
+  background: #000;
+}
+
+.modal .modal-box .modal-body .modal-content .modal-button button:nth-child(2) {
+  background: blue;
+}
+/* End modal style */

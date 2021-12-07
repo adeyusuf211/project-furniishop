@@ -32,7 +32,7 @@ const cart      = document.querySelectorAll('.cart-card');
 const harga     = document.querySelectorAll('.cart-card .cart-card-total input');
 const quantity  = document.querySelectorAll('.cart-card input');
 const span      = document.querySelectorAll('.cart-card-total h6 span');
-
+const removeBtn = document.querySelectorAll('.remove');
 
 quantity.forEach(jumlah => {
     jumlah.addEventListener('change', function() {
@@ -48,7 +48,6 @@ quantity.forEach(jumlah => {
         });
     });
 });
-
 
 const images    = document.querySelector('.product-image');
 const image     = document.querySelectorAll('.cards-images .card-image');
@@ -66,13 +65,45 @@ images.addEventListener('click', function(e) {
 
 
 
-const count = document.querySelector('#count p');
-const cartBtn = document.querySelector('#cart-btn');
+const count     = document.querySelector('#count p');
+const cartBtn   = document.querySelector('#cart-btn');
+const cartClose = document.querySelector('#cart-close');
+const cartModal = document.querySelector('#cart-modal');
+const modal     = document.querySelector('.modal');
+
+cartClose.addEventListener('click', function() {
+    modal.style.transition = "0.5s ease-in-out";
+    modal.style.display    = "none";
+});
+
+cartModal.addEventListener('click', function() {
+    modal.style.display = "grid";
+});
 
 let total = 0;
 cartBtn.addEventListener('click', function() {
     total++;
     count.innerHTML = total;
+    modal.style.display = "none";
 });
 
+const input     = document.querySelector('.modal-input');
+const inputP    = document.querySelector('.modal-input input');
+const priceP    = document.querySelector('.modal-price input');
+const priceh3   = document.querySelector('.modal-price h3');
+
+inputP.addEventListener('change', function() {
+    const total = inputP.value * priceP.value;
+    priceh3.innerHTML = `Rp. ${total.toLocaleString('ID')}`;
+});
+
+const modalVar  = document.querySelectorAll('.variant-list .card-image img');
+const modalImg  = document.querySelector('.modal-image img');
+
+modalVar.forEach(img => {
+    img.addEventListener('click', function(e) {
+        modalImg.src = e.target.src;
+        img.style.border = "2px solid black";
+    });
+});
 

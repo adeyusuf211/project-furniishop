@@ -81,17 +81,17 @@
                     </div>
                     <div class="product-catalog">
                         <div class="product-price">
-                            <h2>Harga</h2>
+                            <h2>Price</h2>
                             <div class="list-price">
                                 <h3>Rp. 500.000</h3>
                             </div>
                         </div>
                         <div class="product-quantity">
-                            <h3>Quantity: </h3>
-                            <input type="number" min="1" value="1">
+                            <h3>Stock: </h3>
+                            <h3>500</h3>
                         </div>
                         <div class="product-action">
-                            <button class="detail" id="cart-btn">
+                            <button class="detail" id="cart-modal">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#ffffff">
                                     <path d="M0 0h24v24H0V0z" fill="none" />
                                     <path
@@ -232,6 +232,47 @@
             </div>
             <div class="footer-copy">
                 <p>This site created by <a href="https://adeyusuf.netlify.app" target="_blank">Ade Yusuf</a> &copy; 2021</p>
+            </div>
+        </section>
+
+        <section id="modal">
+            <div class="modal">
+                <div class="modal-box">
+                    <div class="modal-body">
+                        <div class="modal-image">
+                            <img src="/images/products/artem-riasnianskyi-8fvDJw3jrcI-unsplash.jpg" alt="">
+                        </div>
+                        <div class="modal-content">
+                            <div class="modal-variant">
+                                <h3>Variant</h3>
+                                <div class="variant-list">
+                                    <div class="card-image">
+                                        <img src="/images/products/artem-riasnianskyi-8fvDJw3jrcI-unsplash.jpg" alt="">
+                                    </div>
+                                    <div class="card-image">
+                                        <img src="/images/products/benjamin-voros-X63FTIZFbZo-unsplash.jpg" alt="">
+                                    </div>
+                                    <div class="card-image">
+                                        <img src="/images/products/daniil-silantev-1P6AnKDw6S8-unsplash.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-input">
+                                <label for="">Quantity: </label>
+                                <input type="number" id="" min="1" value="1">
+                            </div>
+                            <div class="modal-price">
+                                <h5>Total Price: </h5>
+                                <h3>Rp. 500.000</h3>
+                                <input type="hidden" id="total_price" value="500000" readonly>
+                            </div>
+                            <div class="modal-button">
+                                <button id="cart-close">Close</button>
+                                <button id="cart-btn">Add To Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
