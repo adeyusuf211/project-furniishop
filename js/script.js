@@ -49,6 +49,20 @@ quantity.forEach(jumlah => {
     });
 });
 
+// Scirpt for modal auth
+const auth      = document.querySelector('#auth');
+const authModal = document.querySelector('.auth');
+const authClose = document.querySelector('.auth .auth-text p');
+
+auth.addEventListener('click', function() {
+   authModal.classList.add('show');
+});
+
+authClose.addEventListener('click', function() {
+    authModal.classList.remove('show');
+});
+// End modal auth script
+
 const images    = document.querySelector('.product-image');
 const image     = document.querySelectorAll('.cards-images .card-image');
 const jumbo     = document.querySelector('.jumbo');
@@ -64,28 +78,27 @@ images.addEventListener('click', function(e) {
 });
 
 
-
 const count     = document.querySelector('#count p');
 const cartBtn   = document.querySelector('#cart-btn');
 const cartClose = document.querySelector('#cart-close');
 const cartModal = document.querySelector('#cart-modal');
 const modal     = document.querySelector('.modal');
 
-cartClose.addEventListener('click', function() {
-    modal.style.transition = "0.5s ease-in-out";
-    modal.style.display    = "none";
-});
-
 cartModal.addEventListener('click', function() {
-    modal.style.display = "grid";
+    modal.classList.add('show');
 });
 
-let total = 0;
+cartClose.addEventListener('click', function() {
+    modal.classList.remove('show');
+});
+
 cartBtn.addEventListener('click', function() {
+    let total = 0;
     total++;
     count.innerHTML = total;
     modal.style.display = "none";
 });
+
 
 const input     = document.querySelector('.modal-input');
 const inputP    = document.querySelector('.modal-input input');
@@ -106,4 +119,5 @@ modalVar.forEach(img => {
         img.style.border = "2px solid black";
     });
 });
+
 
