@@ -4,8 +4,8 @@ fetch('/db.json')
             let card = '';
             const productLinks = document.querySelector('.product-list');
             data.forEach(product => {
-                card += `<a href="detail-produk.html">
-                            <div class="product" data-attr="${ product.jenis }">
+                card += `<a href="detail-produk.html" data-att="${ product.jenis }">
+                            <div class="product">
                                 <div class="product-image">
                                     <img src="${ product.gambar }" alt="">
                                     <button>${ product.jenis }</button>
@@ -63,6 +63,34 @@ authClose.addEventListener('click', function() {
 });
 // End modal auth script
 
+
+
+const btnFilter = document.querySelectorAll('.products .product-categories .btn-categories');
+const img       = document.querySelectorAll('.products .product-list a');
+
+btnFilter.forEach(filter => {
+      filter.addEventListener('click', () => {
+          for(let i = 0; i < btnFilter.length; i++) {
+              btnFilter[i].classList.remove('active');
+          }
+          filter.classList.add('active');
+
+        // alert(filter.textContent);
+
+          // show image
+          img.forEach(show => {
+              show.style.display = 'none';
+              show.style.transition = 'all 0.5s linear';
+              let productImg = filter.textContent.toLowerCase();
+              if(show.getAttribute('data-att') === productImg) {
+                  show.style.display = 'flex';
+              }
+          });
+      });
+});
+
+
+
 const images    = document.querySelector('.product-image');
 const image     = document.querySelectorAll('.cards-images .card-image');
 const jumbo     = document.querySelector('.jumbo');
@@ -110,6 +138,7 @@ inputP.addEventListener('change', function() {
     priceh3.innerHTML = `Rp. ${total.toLocaleString('ID')}`;
 });
 
+
 const modalVar  = document.querySelectorAll('.variant-list .card-image img');
 const modalImg  = document.querySelector('.modal-image img');
 
@@ -119,5 +148,8 @@ modalVar.forEach(img => {
         img.style.border = "2px solid black";
     });
 });
+
+
+
 
 
